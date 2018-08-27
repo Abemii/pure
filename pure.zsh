@@ -186,6 +186,10 @@ prompt_pure_precmd() {
 		psvar[12]="${VIRTUAL_ENV:t}"
 		export VIRTUAL_ENV_DISABLE_PROMPT=12
 	fi
+	
+	if [[ -n $CONDA_PROMPT_MODIFER ]]; then
+		psvar[12]="$CONDA_PROMPT_MODIFIER"
+ 	fi
 
 	# Make sure VIM prompt is reset.
 	prompt_pure_reset_prompt_symbol
